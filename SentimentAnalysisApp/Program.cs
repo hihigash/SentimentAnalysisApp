@@ -1,4 +1,6 @@
-﻿if (args.Length != 1)
+﻿using SentimentAnalysisApp;
+
+if (args.Length != 1)
 {
     Console.WriteLine("Usage: SentimentAnalysisApp <FeedbackFilePath>");
     return;
@@ -14,5 +16,6 @@ if (!File.Exists(feedbackFilePath))
 var feedbacks = File.ReadAllLines(feedbackFilePath);
 foreach (var feedback in feedbacks)
 {
-    // TODO: Call the method to get the sentiment
+    var sentiment = await SentimentAnalyzer.GetSentiment(feedback);
+    Console.WriteLine($"{sentiment}: {feedback}");
 }
