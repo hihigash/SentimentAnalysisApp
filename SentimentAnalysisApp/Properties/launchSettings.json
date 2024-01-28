@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SentimentAnalysisApp": {
+      "commandName": "Project",
+      "commandLineArgs": ".\\data\\feedback.txt"
+    }
+  }
+}
